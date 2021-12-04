@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def foods(request):
-    return HttpResponse('เมนูอร่อย ส่งบ่อย ส่งแม่น By Junraider')
+    return render(request, 'app_foods/foods.html')
 
 def food(request, food_id):
-    return HttpResponse('รายละเอียดของเมนูนี้ id = ' + str(food_id))
+    return render(request, 'app_foods/food.html')
