@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def home(request):
-    return HttpResponse('<h1>จันทร์ไรเดอร์</h1>')
+    return render(request, 'app_general/home.html');
 
 def about(request):
-    return HttpResponse('เกี่ยวกับจันทร์ไรเดอร์')
+    return render(request, 'app_general/about.html')
