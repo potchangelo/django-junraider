@@ -3,9 +3,7 @@
 {% block site_title %}เมนูอร่อยทั้งหมด - {% endblock %}
 
 {% block content %}
-
 <h1>เมนูอร่อย ส่งบ่อย ส่งแม่น</h1>
-
 {% for food in foods %}
     <h3><a href="{% url 'food' food.id %}">{{ food.title }}</a></h3>
     {% if food.isPremium %}
@@ -15,5 +13,4 @@
 {% empty %}
     <p>วัตถุดิบกำลังเดินทางมาจากทะเลอันไกลโพ้นนนน กรุณารอความอร่อยอีกไม่นาน</p>
 {% endfor %}
-
 {% endblock %}
