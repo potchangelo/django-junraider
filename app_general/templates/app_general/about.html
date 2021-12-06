@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เกี่ยวกับหมู่เฮา - จันทร์ไรเดอร์ เมนูอร่อย ส่งบ่อย ส่งแม่น</title>
-</head>
-<body>
-    <h1>เรื่องราวเกี่ยวกับจันทร์ไรเดอร์</h1>
-    <h4>ก่อตั้ง</h4>
-    <p>2021</p>
-    <hr>
-    <h4>คำมั่นสัญญา</h4>
-    <p>นับแต่วันนี้เป็นต้นไป จะรักเธอจนกว่าแมนยูได้แชมป์พรีเมียร์ลีก</p>
-</body>
-</html>
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}เกี่ยวกับหมู่เฮา - {% endblock %}
+
+{% block content %}
+<h1>เรื่องราวเกี่ยวกับจันทร์ไรเดอร์</h1>
+<h4>ก่อตั้ง</h4>
+<p>2021</p>
+<hr>
+<h4>คำมั่นสัญญา</h4>
+<p>นับแต่วันนี้เป็นต้นไป จะรักเธอจนกว่าแมนยูได้แชมป์พรีเมียร์ลีก</p>
+{% endblock %}

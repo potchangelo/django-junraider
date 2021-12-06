@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>จันทร์ไรเดอร์ เมนูอร่อย ส่งบ่อย ส่งแม่น</title>
-</head>
-<body>
-    <header class="site-header" style="background-color: lightgray;">
-        <a class="site-header-item site-header-brand" href="/">จันทร์ไรเดอร์</a>
-        <a class="site-header-item" href="/foods">เมนูอร่อยทั้งหมด</a>
-        <a class="site-header-item" href="/about">เกี่ยวกับ</a>
-    </header>
-    <h1>จันทร์ไรเดอร์</h1>
-    <p>เมนูอร่อย ส่งบ่อย ส่งแม่น</p>
-    <p>รอก่อน เดี๋ยวเจอ</p>
-    <footer class="site-footer" style="background-color: lightgray;">
-        <h4>ติดตามความเคลื่อนไหวและโปรโมชั่นได้ที่</h4>
-        <p>
-            <a class="site-footer-item" href="#">Facebook</a>
-            <a class="site-header-item" href="#">Twitter</a>
-            <a class="site-header-item" href="#">Instagram</a>
-        </p>
-        <p>Copyright 2021-2022 Junraider. All right reserved.</p>
-    </footer>
-</body>
-</html>
+{% extends 'app_general/components/base.html' %}
+
+{% block content %}
+<h1>จันทร์ไรเดอร์</h1>
+<p>เมนูอร่อย ส่งบ่อย ส่งแม่น</p>
+<p>รอก่อน เดี๋ยวเจอ</p>
+{% endblock %}
