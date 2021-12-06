@@ -5,11 +5,13 @@
 {% block content %}
 <h1>เมนูอร่อย ส่งบ่อย ส่งแม่น</h1>
 {% for food in foods %}
-    <h3><a href="{% url 'food' food.id %}">{{ food.title }}</a></h3>
-    {% if food.isPremium %}
-        <p>*** เมนูพิเศษสุด Premium</p>
-    {% endif %}
-    <p>{{ food.price }}</p>
+    <div style="background-color: rgb(255, 238, 231);">
+        <h3><a href="{% url 'food' food.id %}">{{ food.title }}</a></h3>
+        {% if food.isPremium %}
+            <p>*** เมนูพิเศษสุด Premium</p>
+        {% endif %}
+        <p>{{ food.price }}</p>
+    </div>
 {% empty %}
     <p>วัตถุดิบกำลังเดินทางมาจากทะเลอันไกลโพ้นนนน กรุณารอความอร่อยอีกไม่นาน</p>
 {% endfor %}
