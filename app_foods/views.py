@@ -1,10 +1,20 @@
+from datetime import datetime
 from django.http.response import HttpResponse
 from django.shortcuts import render
 
 all_foods = [
-    {'id': 1, 'title': 'Red Spicy', 'price': 299, 'isPremium': False},
-    {'id': 2, 'title': 'Blue Iceberg', 'price': 299, 'isPremium': False},
-    {'id': 3, 'title': 'Premium Black Choco', 'price': 399, 'isPremium': True},
+    {
+        'id': 1, 'title': 'Red Spicy', 'price': 2990, 'isPremium': False,
+        'promotionEndAt': datetime(2022, 1, 31)
+    },
+    {
+        'id': 2, 'title': 'Blue Iceberg', 'price': 2990, 'isPremium': False,
+        'promotionEndAt': datetime(2022, 2, 15)
+    },
+    {
+        'id': 3, 'title': 'Premium Black Choco', 'price': 3990, 'isPremium': True,
+        'promotionEndAt': datetime(2022, 2, 28)
+    },
 ]
 
 # Create your views here.

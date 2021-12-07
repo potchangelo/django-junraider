@@ -8,7 +8,8 @@
     {% if food.isPremium %}
         <p>*** เมนูพิเศษสุด Premium</p>
     {% endif %}
-    <p>{{ food.price }}</p>
+    <p>{{ food.price|floatformat:'g' }}</p>
+    <p>โปรโมชั่นถึงวันที่ {{ food.promotionEndAt|date:'j N Y' }}</p>
     <p>อร่อยจนต้องต่อยรังแตน</p>
 {% else %}
     <p>ไม่พบเมนู</p>
