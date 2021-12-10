@@ -5,7 +5,7 @@ from django.db import models
 class Food(models.Model):
     title = models.CharField(max_length=60)
     price = models.IntegerField()
-    specialPrice = models.IntegerField(null=True)
-    isPremium = models.BooleanField(default=False)
-    promotionEndAt = models.DateTimeField(null=True)
+    special_price = models.IntegerField(null=True)
+    is_premium = models.BooleanField(default=False)
+    promotion_end_at = models.DateTimeField(null=True)
     description = models.TextField(null=True)
