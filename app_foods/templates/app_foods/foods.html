@@ -7,11 +7,18 @@
 {% for food in foods %}
     <div style="background-color: rgb(255, 238, 231);">
         <h3><a href="{% url 'food' food.id %}">{{ food.title }}</a></h3>
-        {% if food.isPremium %}
+        {% if food.special_price is not None %}
+            <p>
+                <del style="color: gray;">{{ food.price|floatformat:'g' }}</del>
+                <span>{{ food.special_price|floatformat:'g' }}</span>
+            </p>
+        {% else %}
+            <p>{{ food.price|floatformat:'g' }}</p>
+        {% endif %}
+        {% if food.is_premium %}
             <p>*** เมนูพิเศษสุด Premium</p>
         {% endif %}
-        <p>{{ food.price|floatformat:'g' }}</p>
-        <p>โปรโมชั่นถึงวันที่ {{ food.promotionEndAt|date:'j N Y' }}</p>
+        <p>โปรโมชั่นถึงวันที่ {{ food.promotion_end_at|date:'j N Y' }}</p>
     </div>
 {% empty %}
     <p>วัตถุดิบกำลังเดินทางมาจากทะเลอันไกลโพ้นนนน กรุณารอความอร่อยอีกไม่นาน</p>
