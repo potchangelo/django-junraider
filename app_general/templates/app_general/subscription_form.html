@@ -1,0 +1,26 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}ลงทะเบียนรับโปรโมชั่น - {% endblock %}
+
+{% block content %}
+<h1>ลงทะเบียนรับโปรโมชั่น</h1>
+<form>
+    <div>
+        <label>ชื่อ-นามสกุล</label>
+        <input type="text">
+    </div>
+    <div>
+        <label>อีเมล</label>
+        <input type="email">
+    </div>
+    <div>
+        <label>เมนูที่สนใจ</label>
+        {% for food in foods %}
+            <label>
+                <input type="checkbox"> {{ food.title }}
+            </label>
+        {% endfor %}
+    </div>
+    <a href="{% url 'subscription_thankyou' %}">ลงทะเบียนรับโปรโมชั่น</a>
+</form>
+{% endblock %}
