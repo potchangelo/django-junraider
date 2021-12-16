@@ -1,5 +1,3 @@
-from datetime import datetime
-from django.http.response import HttpResponse
 from django.shortcuts import render
 from .models import Food
 
@@ -13,5 +11,9 @@ def foods(request):
 
 def food(request, food_id):
     one_food = None
+    try:
+        one_food = Food.objects.get(id=food_id)
+    except:
+        print('หาไม่เจอ หรือเธอไม่มี')
     context = {'food': one_food}
     return render(request, 'app_foods/food.html', context)

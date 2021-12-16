@@ -5,12 +5,21 @@
 {% block content %}
 {% if food is not None %}
     <h1>{{ food.title }}</h1>
-    {% if food.isPremium %}
+    {% if food.special_price is not None %}
+        <p>
+            <del style="color: gray;">{{ food.price|floatformat:'g' }}</del>
+            <span>{{ food.special_price|floatformat:'g' }}</span>
+        </p>
+    {% else %}
+        <p>{{ food.price|floatformat:'g' }}</p>
+    {% endif %}
+    {% if food.is_premium %}
         <p>*** เมนูพิเศษสุด Premium</p>
     {% endif %}
-    <p>{{ food.price|floatformat:'g' }}</p>
-    <p>โปรโมชั่นถึงวันที่ {{ food.promotionEndAt|date:'j N Y' }}</p>
-    <p>อร่อยจนต้องต่อยรังแตน</p>
+    {% if food.promotion_end_at is not None %}
+        <p>โปรโมชั่นถึงวันที่ {{ food.promotion_end_at|date:'j N Y' }}</p>
+    {% endif %}
+    <p>{{ food.description }}</p>
 {% else %}
     <p>ไม่พบเมนู</p>
 {% endif %}
