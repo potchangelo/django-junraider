@@ -27,3 +27,4 @@ def subscription(request):
 
 def subscription_thankyou(request):
     return render(request, 'app_general/subscription_thankyou.html')
+    
