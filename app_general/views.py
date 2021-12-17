@@ -1,9 +1,7 @@
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from app_foods.models import Food
-from app_general.forms import SubscriptionForm1
-from .models import Subscription
+from app_general.forms import SubscriptionModelForm
 
 # Create your views here.
 
@@ -16,18 +14,12 @@ def about(request):
 def subscription(request):
     # POST
     if request.method == 'POST':
-        form = SubscriptionForm1(request.POST)
+        form = SubscriptionModelForm(request.POST)
         if form.is_valid():
-            try:
-                sub_data = form.cleaned_data
-                new_sub = Subscription(name=sub_data['name'], email=sub_data['email'])
-                new_sub.save()
-                new_sub.food_set.set(sub_data['food_set'])
-                return HttpResponseRedirect(reverse('subscription_thankyou'))
-            except:
-                print('Some errors')
+            form.save()
+            return HttpResponseRedirect(reverse('subscription_thankyou'))
     else:
-        form = SubscriptionForm1()
+        form = SubscriptionModelForm()
     
     # GET
     context = {'form': form}
