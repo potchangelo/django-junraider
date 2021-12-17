@@ -2,6 +2,7 @@ from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from app_foods.models import Food
+from app_general.forms import SubscriptionForm1
 from .models import Subscription
 
 # Create your views here.
@@ -15,29 +16,18 @@ def about(request):
 def subscription(request):
     # POST
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        food_ids = request.POST.getlist('food_id')
-        accepted = request.POST.get('accepted')
-
-        if accepted == 'yes':
-            new_sub = Subscription(name=name, email=email)
+        form = SubscriptionForm1(request.POST)
+        if form.is_valid():
+            sub_data = form.cleaned_data
+            new_sub = Subscription(name=sub_data['name'], email=sub_data['email'])
             new_sub.save()
-            if len(food_ids) > 0:
-                selected_foods = Food.objects.filter(id__in=food_ids)
-                new_sub.food_set.set(selected_foods)
+            new_sub.food_set.set(sub_data['food_set'])
             return HttpResponseRedirect(reverse('subscription_thankyou'))
-        
-        all_foods = Food.objects.order_by('-is_premium')
-        context = {
-            'foods': all_foods, 'please_accepted': 'กรุณาติ๊กถูกตรงข้อตกลงเพิ่มเติมด้วย', 
-            'values': request.POST, 'food_ids': list(map(int, food_ids))
-        }
-        return render(request, 'app_general/subscription_form.html', context)
-
+    else:
+        form = SubscriptionForm1()
+    
     # GET
-    all_foods = Food.objects.order_by('-is_premium')
-    context = {'foods': all_foods}
+    context = {'form': form}
     return render(request, 'app_general/subscription_form.html', context)
 
 def subscription_thankyou(request):

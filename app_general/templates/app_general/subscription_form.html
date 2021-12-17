@@ -5,7 +5,7 @@
 {% block content %}
 <h1>ลงทะเบียนรับโปรโมชั่น</h1>
 <form action="{% url 'subscription' %}" method="POST">
-    {% csrf_token %}
+    <!-- {% csrf_token %}
     <div>
         <label>ชื่อ-นามสกุล</label>
         <input type="text" name="name" value="{{ values.name }}">
@@ -30,11 +30,10 @@
         <label>
             <input type="checkbox" name="accepted" value="yes"> ข้อความยาวๆที่หลายคนเคยเจอ อาจไม่ต้องอ่านก็ได้ แค่ยอมรับและเข้าใจก็พอ
         </label>
-    </div>
+    </div> -->
+    {% csrf_token %}
+    {{ form.as_ul }}
     <br>
     <button type="submit">ลงทะเบียนรับโปรโมชั่น</button>
-    {% if please_accepted is not None %}
-        <p>{{ please_accepted }}</p>
-    {% endif %}
 </form>
 {% endblock %}
