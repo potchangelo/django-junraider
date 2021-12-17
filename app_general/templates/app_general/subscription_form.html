@@ -5,35 +5,32 @@
 {% block content %}
 <h1>ลงทะเบียนรับโปรโมชั่น</h1>
 <form action="{% url 'subscription' %}" method="POST">
-    <!-- {% csrf_token %}
-    <div>
-        <label>ชื่อ-นามสกุล</label>
-        <input type="text" name="name" value="{{ values.name }}">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div style="margin-bottom: 16px;">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+        {{ form.name.errors }}
     </div>
-    <br>
-    <div>
-        <label>อีเมล</label>
-        <input type="email" name="email"  value="{{ values.email }}">
+    <div style="margin-bottom: 16px;">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.email.errors }}
     </div>
-    <br>
-    <div>
-        <label>เมนูที่สนใจ</label>
-        {% for food in foods %}
-            <label>
-                <input type="checkbox" name="food_id" value="{{ food.id }}" {% if food.id in food_ids %}checked{% endif %}> {{ food.title }}
-            </label>
-        {% endfor %}
+    <div style="margin-bottom: 16px;">
+        {{ form.food_set.label_tag }}
+        {{ form.food_set }}
+        {{ form.food_set.errors }}
     </div>
-    <br>
-    <div>
+    <div style="margin-bottom: 16px;">
         <label>อ่านข้อตกลงเพิ่มเติม</label>
         <label>
-            <input type="checkbox" name="accepted" value="yes"> ข้อความยาวๆที่หลายคนเคยเจอ อาจไม่ต้องอ่านก็ได้ แค่ยอมรับและเข้าใจก็พอ
+            {{ form.accepted }} {{ form.accepted.label }}
         </label>
-    </div> -->
-    {% csrf_token %}
-    {{ form.as_ul }}
-    <br>
-    <button type="submit">ลงทะเบียนรับโปรโมชั่น</button>
+        {{ form.accepted.errors }}
+    </div>
+    <div style="margin-bottom: 16px;">
+        <button type="submit">ลงทะเบียนรับโปรโมชั่น</button>
+    </div>
 </form>
 {% endblock %}

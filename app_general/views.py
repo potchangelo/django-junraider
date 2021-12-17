@@ -18,11 +18,14 @@ def subscription(request):
     if request.method == 'POST':
         form = SubscriptionForm1(request.POST)
         if form.is_valid():
-            sub_data = form.cleaned_data
-            new_sub = Subscription(name=sub_data['name'], email=sub_data['email'])
-            new_sub.save()
-            new_sub.food_set.set(sub_data['food_set'])
-            return HttpResponseRedirect(reverse('subscription_thankyou'))
+            try:
+                sub_data = form.cleaned_data
+                new_sub = Subscription(name=sub_data['name'], email=sub_data['email'])
+                new_sub.save()
+                new_sub.food_set.set(sub_data['food_set'])
+                return HttpResponseRedirect(reverse('subscription_thankyou'))
+            except:
+                print('Some errors')
     else:
         form = SubscriptionForm1()
     
