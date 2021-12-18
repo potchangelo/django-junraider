@@ -8,7 +8,7 @@
 {% for food in foods %}
     <div style="background-color: rgb(255, 238, 231);">
         <div>
-            <img src="{% static 'app_foods/food-red-spicy.jpg' %}">
+            <img src="{% static food.image_relative_url %}">
         </div>
         <h3><a href="{% url 'food' food.id %}">{{ food.title }}</a></h3>
         {% if food.special_price is not None %}
