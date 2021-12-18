@@ -1,9 +1,13 @@
 {% extends 'app_general/components/base.html' %}
+{% load static %}
 
 {% block site_title %}{{ food.title }} - {% endblock %}
 
 {% block content %}
 {% if food is not None %}
+    <div>
+        <img src="{% static food.image_relative_url %}">
+    </div>
     <h1>{{ food.title }}</h1>
     {% if food.special_price is not None %}
         <p>

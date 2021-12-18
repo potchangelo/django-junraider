@@ -7,9 +7,9 @@
 <h1>เมนูอร่อย ส่งบ่อย ส่งแม่น</h1>
 {% for food in foods %}
     <div style="background-color: rgb(255, 238, 231);">
-        <div>
+        <a href="{% url 'food' food.id %}" style="display: block;">
             <img src="{% static food.image_relative_url %}">
-        </div>
+        </a>
         <h3><a href="{% url 'food' food.id %}">{{ food.title }}</a></h3>
         {% if food.special_price is not None %}
             <p>
