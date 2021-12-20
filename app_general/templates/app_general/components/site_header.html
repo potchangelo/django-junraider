@@ -1,9 +1,13 @@
 {% load static %}
-<header class="site-header" style="background-color: lightgray;">
+<header class="site-header">
     <a class="site-header-item site-header-brand" href="{% url 'home' %}">
         <img src="{% static 'app_general/logo.png' %}">
         <span>จันทร์ไรเดอร์</span>
     </a>
-    <a class="site-header-item" href="{% url 'foods' %}">เมนูทั้งหมด</a>
-    <a class="site-header-item" href="{% url 'about' %}">เกี่ยวกับ</a>
+    <a class="site-header-item" href="{% url 'foods' %}">
+        <span>เมนูทั้งหมด</span>
+    </a>
+    <a class="site-header-item" href="{% url 'about' %}">
+        <span>เกี่ยวกับ</span>
+    </a>
 </header>

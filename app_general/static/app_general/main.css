@@ -26,6 +26,10 @@
         url('fonts/mitr-v6-thai_latin-regular.svg#Mitr') format('svg'); /* Legacy iOS */
 }
 
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
 html {
     font-family: 'Mitr', sans-serif;
     font-weight: 300;
@@ -61,4 +65,34 @@ h6 {
 
 p {
     font-size: 16px;
+}
+
+.site-header {
+    background-color: white;
+    border-bottom: 1px solid #eeeeee;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-start;
+    height: 50px;
+}
+
+.site-header-item {
+    color: #111111;
+    background-color: rgba(0, 0, 0, 0);
+    font-weight: 400;
+    text-decoration: none;
+    display: flex;
+    padding: 0px 10px;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.site-header-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.site-header-brand img {
+    display: inline-block;
+    height: 30px;
+    margin-right: 6px;
 }
