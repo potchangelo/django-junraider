@@ -38,6 +38,8 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 h1 {
@@ -100,3 +102,12 @@ p {
 }
 
 /* Site footer */
+.site-footer {
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 16px;
+}
+
+.site-footer-copyright {
+    font-size: 12px;
+}
