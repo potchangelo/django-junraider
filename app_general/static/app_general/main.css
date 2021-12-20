@@ -1,0 +1,64 @@
+/* mitr-300 - thai_latin */
+@font-face {
+    font-family: 'Mitr';
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/mitr-v6-thai_latin-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+        url('fonts/mitr-v6-thai_latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('fonts/mitr-v6-thai_latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+        url('fonts/mitr-v6-thai_latin-300.woff') format('woff'), /* Modern Browsers */
+        url('fonts/mitr-v6-thai_latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('fonts/mitr-v6-thai_latin-300.svg#Mitr') format('svg'); /* Legacy iOS */
+}
+
+/* mitr-regular - thai_latin */
+@font-face {
+    font-family: 'Mitr';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/mitr-v6-thai_latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+        url('fonts/mitr-v6-thai_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('fonts/mitr-v6-thai_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('fonts/mitr-v6-thai_latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('fonts/mitr-v6-thai_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('fonts/mitr-v6-thai_latin-regular.svg#Mitr') format('svg'); /* Legacy iOS */
+}
+
+html {
+    font-family: 'Mitr', sans-serif;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 16px;
+}
