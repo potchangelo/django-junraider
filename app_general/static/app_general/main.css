@@ -40,8 +40,9 @@ html {
 h1, h2, h3, h4, h5, h6 {
     color: #111111;
     font-weight: 400;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    line-height: 1.4;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -70,6 +71,42 @@ h6 {
 
 p {
     font-size: 16px;
+    line-height: 1.6;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.image-block {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 12px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.content-section {
+    padding: 40px 16px;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+@media screen and (min-width: 720px) {
+    .grid-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .button {
@@ -80,6 +117,7 @@ p {
     line-height: 1;
     text-decoration: none;
     display: inline-block;
+    margin-bottom: 12px;
     padding: 8px 12px;
     transition: background-color 0.3s;
 }
@@ -133,6 +171,8 @@ p {
 
 .site-footer-copyright {
     font-size: 12px;
+    margin-top: 32px;
+    margin-bottom: 0px;
 }
 
 /* Homepage */
@@ -148,6 +188,6 @@ p {
 
 .home-landing-text {
     text-shadow: 0px 0px 1px rgba(255, 255, 255, 1);
-    margin-top: 24px;
+    margin-top: 0px;
     margin-bottom: 24px;
 }
