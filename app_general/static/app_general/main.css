@@ -26,6 +26,7 @@
         url('fonts/mitr-v6-thai_latin-regular.svg#Mitr') format('svg'); /* Legacy iOS */
 }
 
+/* Global */
 *, ::before, ::after {
     box-sizing: border-box;
 }
@@ -67,6 +68,7 @@ p {
     font-size: 16px;
 }
 
+/* Site header */
 .site-header {
     background-color: white;
     border-bottom: 1px solid #eeeeee;
@@ -96,3 +98,5 @@ p {
     height: 30px;
     margin-right: 6px;
 }
+
+/* Site footer */
