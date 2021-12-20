@@ -2,30 +2,36 @@
 {% load static %}
 
 {% block content %}
-<section>
-    <h1>จันทร์ไรเดอร์</h1>
-    <p>ไอศครีมอร่อย ส่งบ่อย ส่งแม่น</p>
-    <p>จัดส่งไอศครีมรสโปรดของคุณ ทุกวันจันทร์แรก จันทร์ที่สอง หรือจันทร์ที่สาม ของแต่ละเดือน</p>
+<section class="home-landing">
+    <h1 class="home-landing-text">จันทร์ไรเดอร์</h1>
+    <h4 class="home-landing-text">ไอศครีมอร่อย ส่งบ่อย ส่งแม่น</h4>
+    <h6 class="home-landing-text">จัดส่งไอศครีมรสโปรดของคุณ ทุกวันจันทร์แรก จันทร์ที่สอง หรือจันทร์ที่สาม ของแต่ละเดือน</h6>
+    <p>
+        <a class="button" href="#">ดูเมนูทั้งหมด</a>
+        <a class="button button-primary" href="#">ลงทะเบียนรับโปรโมชั่น</a>
+    </p>
 </section>
-<section>
-    <h3>อธิบายอะไรซักหน่อย</h3>
-    <div>
+<section class="content-section">
+    <div class="content-container">
+        <h3>อธิบายอะไรซักหน่อย</h3>
         <div>
-            <img src="{% static 'app_general/home-about-1.jpg' %}">
+            <div>
+                <img src="{% static 'app_general/home-about-1.jpg' %}">
+            </div>
+            <p>จันทร์ไรเดอร์ คือ บริการจัดส่งไอศครีมอร่อยถึงมือคุณ เดือนละครั้ง ในวันจันทร์ที่คุณสะดวกรับ</p>
         </div>
-        <p>จันทร์ไรเดอร์ คือ บริการจัดส่งไอศครีมอร่อยถึงมือคุณ เดือนละครั้ง ในวันจันทร์ที่คุณสะดวกรับ</p>
-    </div>
-    <div>
         <div>
-            <img src="{% static 'app_general/home-about-2.jpg' %}">
+            <div>
+                <img src="{% static 'app_general/home-about-2.jpg' %}">
+            </div>
+            <p>จันทร์ไรแมน คือ พนักงานส่งไอศครีม ขี่ไวแบบไม่ย้อนศร และฉีดวัคซีนครบ 2 เข็มแล้วทุกคน</p>
         </div>
-        <p>จันทร์ไรแมน คือ พนักงานส่งไอศครีม ขี่ไวแบบไม่ย้อนศร และฉีดวัคซีนครบ 2 เข็มแล้วทุกคน</p>
-    </div>
-    <div>
         <div>
-            <img src="{% static 'app_general/home-about-3.jpg' %}">
+            <div>
+                <img src="{% static 'app_general/home-about-3.jpg' %}">
+            </div>
+            <p>ไอศครีมทุกรสรังสรรค์ขึ้นมาอย่างพิถีพิถัน ไม่หวั่นแม้ออเดอร์มามาก</p>
         </div>
-        <p>ไอศครีมทุกรสรังสรรค์ขึ้นมาอย่างพิถีพิถัน ไม่หวั่นแม้ออเดอร์มามาก</p>
     </div>
 </section>
 {% endblock %}
