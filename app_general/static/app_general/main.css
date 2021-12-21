@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     line-height: 1.4;
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 h1 {
@@ -73,7 +73,19 @@ p {
     font-size: 16px;
     line-height: 1.6;
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+}
+
+a {
+    color:rgb(0, 125, 220);
+}
+
+.text-gray {
+    color: #888888;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .image-block {
@@ -82,12 +94,8 @@ p {
     margin-bottom: 12px;
 }
 
-.text-center {
-    text-align: center;
-}
-
 .content-section {
-    padding: 40px 16px;
+    padding: 64px 16px;
 }
 
 .content-section-single {
@@ -100,11 +108,16 @@ p {
     margin-right: auto;
 }
 
+.content-title {
+    margin-bottom: 24px;
+}
+
 .grid-3 {
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 16px;
     row-gap: 16px;
+    margin-bottom: 16px;
 }
 
 @media screen and (min-width: 720px) {
@@ -194,4 +207,14 @@ p {
     text-shadow: 0px 0px 1px rgba(255, 255, 255, 1);
     margin-top: 0px;
     margin-bottom: 24px;
+}
+
+/* Foods */
+.food-image-link {
+    display: block;
+}
+
+.food-title a:not(:hover) {
+    color: #111111;
+    text-decoration: none;
 }

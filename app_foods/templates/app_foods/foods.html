@@ -4,29 +4,37 @@
 {% block site_title %}เมนูอร่อยทั้งหมด - {% endblock %}
 
 {% block content %}
-<h1>เมนูอร่อย ส่งบ่อย ส่งแม่น</h1>
-{% for food in foods %}
-    <div style="background-color: rgb(255, 238, 231);">
-        <a href="{% url 'food' food.id %}" style="display: block;">
-            <img src="{% static food.image_relative_url %}">
-        </a>
-        <h3><a href="{% url 'food' food.id %}">{{ food.title }}</a></h3>
-        {% if food.special_price is not None %}
-            <p>
-                <del style="color: gray;">{{ food.price|floatformat:'g' }}</del>
-                <span>{{ food.special_price|floatformat:'g' }}</span>
-            </p>
-        {% else %}
-            <p>{{ food.price|floatformat:'g' }}</p>
-        {% endif %}
-        {% if food.is_premium %}
-            <p>*** เมนูพิเศษสุด Premium</p>
-        {% endif %}
-        {% if food.promotion_end_at is not None %}
-            <p>โปรโมชั่นถึงวันที่ {{ food.promotion_end_at|date:'j N Y' }}</p>
-        {% endif %}
+<section class="content-section content-section-single">
+    <div class="content-container">
+        <h3 class="content-title">เมนูอร่อย ส่งบ่อย ส่งแม่น</h3>
+        <div class="grid-3">
+            {% for food in foods %}
+                <div>
+                    <a class="food-image-link" href="{% url 'food' food.id %}">
+                        <img class="image-block" src="{% static food.image_relative_url %}">
+                    </a>
+                    <h6 class="food-title">
+                        <a href="{% url 'food' food.id %}">{{ food.title }}</a>
+                    </h6>
+                    {% if food.special_price is not None %}
+                        <p>
+                            <b>{{ food.special_price|floatformat:'g' }} บาท</b> 
+                            <del class="text-gray">{{ food.price|floatformat:'g' }} บาท</del>
+                        </p>
+                    {% else %}
+                        <p><b>{{ food.price|floatformat:'g' }} บาท</b> </p>
+                    {% endif %}
+                    {% if food.is_premium %}
+                        <p>*** เมนูพิเศษสุด Premium</p>
+                    {% endif %}
+                    {% if food.promotion_end_at is not None %}
+                        <p>โปรโมชั่นถึงวันที่ {{ food.promotion_end_at|date:'j N Y' }}</p>
+                    {% endif %}
+                </div>
+            {% empty %}
+                <p>วัตถุดิบกำลังเดินทางมาจากทะเลอันไกลโพ้นนนน กรุณารอความอร่อยอีกไม่นาน</p>
+            {% endfor %}
+        </div>
     </div>
-{% empty %}
-    <p>วัตถุดิบกำลังเดินทางมาจากทะเลอันไกลโพ้นนนน กรุณารอความอร่อยอีกไม่นาน</p>
-{% endfor %}
+</section>
 {% endblock %}
