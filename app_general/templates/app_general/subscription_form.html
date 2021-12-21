@@ -3,34 +3,39 @@
 {% block site_title %}ลงทะเบียนรับโปรโมชั่น - {% endblock %}
 
 {% block content %}
-<h1>ลงทะเบียนรับโปรโมชั่น</h1>
-<form action="{% url 'subscription' %}" method="POST">
-    {% csrf_token %}
-    {{ form.non_field_errors }}
-    <div style="margin-bottom: 16px;">
-        {{ form.name.label_tag }}
-        {{ form.name }}
-        {{ form.name.errors }}
+<section class="content-section content-section-single">
+    <div class="content-container content-container-narrow">
+        <h3 class="content-title">ลงทะเบียนรับโปรโมชั่น</h3>
+        <p>กรุณาใส่ข้อมูลจริง เพื่อความสะดวกราบรื่นในการรับโปรโมชั่นพิเศษ</p>
+        <form action="{% url 'subscription' %}" method="POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-field">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+                {{ form.name.errors }}
+            </div>
+            <div class="form-field">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {{ form.email.errors }}
+            </div>
+            <div class="form-field">
+                {{ form.food_set.label_tag }}
+                {{ form.food_set }}
+                {{ form.food_set.errors }}
+            </div>
+            <div class="form-field">
+                <label>อ่านข้อตกลงเพิ่มเติม</label>
+                <label>
+                    {{ form.accepted }} {{ form.accepted.label }}
+                </label>
+                {{ form.accepted.errors }}
+            </div>
+            <div class="form-field">
+                <button class="button button-primary" type="submit">ลงทะเบียนรับโปรโมชั่น</button>
+            </div>
+        </form>
     </div>
-    <div style="margin-bottom: 16px;">
-        {{ form.email.label_tag }}
-        {{ form.email }}
-        {{ form.email.errors }}
-    </div>
-    <div style="margin-bottom: 16px;">
-        {{ form.food_set.label_tag }}
-        {{ form.food_set }}
-        {{ form.food_set.errors }}
-    </div>
-    <div style="margin-bottom: 16px;">
-        <label>อ่านข้อตกลงเพิ่มเติม</label>
-        <label>
-            {{ form.accepted }} {{ form.accepted.label }}
-        </label>
-        {{ form.accepted.errors }}
-    </div>
-    <div style="margin-bottom: 16px;">
-        <button type="submit">ลงทะเบียนรับโปรโมชั่น</button>
-    </div>
-</form>
+</section>
 {% endblock %}
