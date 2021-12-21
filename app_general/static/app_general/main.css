@@ -112,7 +112,7 @@ a {
     margin-bottom: 24px;
 }
 
-.grid-3 {
+.grid {
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 16px;
@@ -121,6 +121,10 @@ a {
 }
 
 @media screen and (min-width: 720px) {
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .grid-3 {
         grid-template-columns: 1fr 1fr 1fr;
     }
