@@ -3,7 +3,11 @@
 {% block site_title %}ขอบคุณสำหรับการลงทะเบียน - {% endblock %}
 
 {% block content %}
-<h1>ขอบคุณสำหรับการลงทะเบียน</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus finibus augue, et ornare tellus lacinia id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-<a href="{% url 'home' %}">กลับหน้าแรก</a>
+<section class="content-section content-section-single">
+    <div class="content-container content-container-narrow">
+        <h3 class="content-title">ขอบคุณสำหรับการลงทะเบียน</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus finibus augue, et ornare tellus lacinia id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <p><a class="button button-primary" href="{% url 'home' %}">กลับหน้าแรก</a></p>
+    </div>
+</section>
 {% endblock %}
