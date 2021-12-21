@@ -7,7 +7,7 @@
     <div class="content-container content-container-narrow">
         <h3 class="content-title">ลงทะเบียนรับโปรโมชั่น</h3>
         <p>กรุณาใส่ข้อมูลจริง เพื่อความสะดวกราบรื่นในการรับโปรโมชั่นพิเศษ</p>
-        <form action="{% url 'subscription' %}" method="POST">
+        <form class="subscription-form" action="{% url 'subscription' %}" method="POST">
             {% csrf_token %}
             {{ form.non_field_errors }}
             <div class="form-field">
