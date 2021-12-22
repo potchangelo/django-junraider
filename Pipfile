@@ -8,6 +8,7 @@ django = "*"
 mysql-connector-python = "*"
 python-dotenv = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 autopep8 = "*"
