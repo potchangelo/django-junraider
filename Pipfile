@@ -7,6 +7,7 @@ name = "pypi"
 django = "*"
 mysql-connector-python = "*"
 bpython = "*"
+python-dotenv = "*"
 
 [dev-packages]
 autopep8 = "*"
