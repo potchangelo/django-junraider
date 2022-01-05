@@ -205,6 +205,11 @@ input[type='email'] {
     outline: none;
 }
 
+input[type='text']:focus, 
+input[type='email']:focus {
+    border-color: #0D79F2;
+}
+
 .button {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -229,11 +234,6 @@ input[type='email'] {
 
 .button-primary:hover {
     background-color: #085dbd;
-}
-
-input[type='text']:focus, 
-input[type='email']:focus {
-    border-color: #0D79F2;
 }
 
 /* Homepage */
