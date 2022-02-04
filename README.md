@@ -1,62 +1,69 @@
 # Django Junraider
 
-Example Django project from Zinglecode's YouTube Django Ep.1 (Thai language)
+ตัวอย่างโปรเจ็ค Django จากคลิป "สอน Django เบื้่องต้น จนใช้ได้จริง #01" ของ Zinglecode
+
+Note: ทำขึ้นมาเพื่อการศึกษาทางการเขียนโปรแกรมเท่านั้น เนื้อหาบนเว็บไม่ใช่สินค้าหรือบริการที่มีอยู่จริง
+
 
 ## YouTube video
 
 - YouTube link coming soon
 
+
 ## Install Python 3 and pipenv
 
-1. Download Python 3 installation file from https://www.python.org/
-
-2. Install pipenv as global package by this command.
-
-```
-pip install pipenv
-```
-
-Note: macOS with pre-installed Python 2, use pip3 instead of pip.
-Note: to use pipenv on Windows, Some additional steps maybe required. Please read here ...link...
-
-## Install MySQL and MySQLWorkbench
-
-Please install MySQL + MySQL Workbench. And then create your database for using with this Django project.
+1. ติดตั้ง Python 3
 
 - macOS -> YouTube
 - Windows -> Facebook
 
+2. ติดตั้ง Pipenv
+
+- macOS -> YouTube
+- Windows -> Facebook
+
+
+## Install MySQL and MySQLWorkbench
+
+ติดตั้ง MySQL และ MySQL Workbench
+
+- macOS -> YouTube
+- Windows -> Facebook
+
+
 ## Install and Run project by VSCode
 
-1. Download this project
+1. ดาวน์โหลดโปรเจ็คนี้ลงเครื่อง
 
-2. Open folder project in VSCode
+2. เปิดโฟลเดอร์โปรเจ็คใน VSCode
 
-3. Open project_jrd/.env.sample file, rename to .env, and change configuration
+3. เปิดไฟล์ project_jrd/.env.sample แล้วเปลี่ยนชื่อเป็น .env จากนั้นให้เปลี่ยนการตั้งค่าให้สอดคล้องกับเครื่องของคุณ เสร็จแล้วบันทึกไฟล์ได้เลย
 
-4. Open VSCode Terminal
+4. เปิด VSCode Terminal
 
-5. Install packages by below command
+5. ติดตั้ง Packages ของโปรเจ็ค
 
 ```
 pipenv install
 ```
 
-6. Activate pipenv environment by below command
+6. Activate pipenv environment
 
 ```
 pipenv shell
 ```
 
-7. Run migrations
+7. จัดการ Database migrations ให้เรียบร้อย
 
 ```
 python manage.py migrate
 ```
 
-8. Run project
+8. เปิดเว็บโปรเจ็ค
 
 ```
 python manage.py runserver
 ```
+
+9. (Optional) ตั้งค่า VSCode Python interpreter ของโปรเจ็คนี้ เพื่อให้ VSCode อ่านข้อมูล Package และแสดง Autocomplete ของโปรเจ็คนี้ได้อย่างสมบูรณ์ วิธีการจะอยู่ในคลิปสอน Django
 
