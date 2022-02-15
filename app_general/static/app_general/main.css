@@ -133,6 +133,8 @@ a {
   display: flex;
   justify-content: flex-start;
   height: 50px;
+  position: relative;
+  z-index: 100;
 }
 
 .site-header-item {
@@ -148,7 +150,7 @@ a {
 }
 
 .site-header-item:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .site-header-brand img {
@@ -252,4 +254,37 @@ input[type='email']:focus {
 .food-title a:not(:hover) {
   color: #111111;
   text-decoration: none;
+}
+
+/* Purpose banner */
+.purpose-banner {
+  color: rgb(230, 230, 230);
+  background-color: rgb(36, 36, 36);
+  font-size: 12px;
+  position: relative;
+  z-index: 101;
+}
+
+.purpose-banner .purpose-banner-item {
+  line-height: 1.4;
+  padding: 8px;
+}
+
+.purpose-banner .purpose-banner-item:not(:first-of-type) {
+  padding-top: 0px;
+}
+
+.purpose-banner a {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .purpose-banner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .purpose-banner .purpose-banner-item:not(:first-of-type) {
+    padding-top: 8px;
+  }
 }
