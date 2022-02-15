@@ -50,3 +50,24 @@ python manage.py runserver
 
 9. (Optional) ตั้งค่า VSCode Python interpreter ของโปรเจ็คนี้ เพื่อให้ VSCode อ่านข้อมูล Package และแสดง Autocomplete ของโปรเจ็คนี้ได้อย่างสมบูรณ์ วิธีการจะอยู่ในคลิป "สอน Django เบื้่องต้น จนใช้ได้จริง #01"
 
+
+## Github branches for each lessons
+
+1. [Setup](https://github.com/potchangelo/django-junraider/tree/01-setup)
+2. [projects x apps](https://github.com/potchangelo/django-junraider/tree/02-project-apps)
+3. [urls x views](https://github.com/potchangelo/django-junraider/tree/03-urls-views)
+4. [views x templates](https://github.com/potchangelo/django-junraider/tree/04-views-templates)
+5. [templates x tags](https://github.com/potchangelo/django-junraider/tree/05-templates-tags)
+6. [templates x filters](https://github.com/potchangelo/django-junraider/tree/06-templates-filters)
+7. [models x migrations](https://github.com/potchangelo/django-junraider/tree/07-models-migrations)
+8. [models](https://github.com/potchangelo/django-junraider/tree/08-models)
+9. [models x views x templates](https://github.com/potchangelo/django-junraider/tree/09-models-views-templates)
+10. [forms x views x templates](https://github.com/potchangelo/django-junraider/tree/10-forms-views-templates)
+11. [admin](https://github.com/potchangelo/django-junraider/tree/11-admin)
+12. [Static images](https://github.com/potchangelo/django-junraider/tree/12-static-images)
+13. [Static CSS JS](https://github.com/potchangelo/django-junraider/tree/13-static-css-js)
+14. [settings x dotenv](https://github.com/potchangelo/django-junraider/tree/14-settings-dotenv)
+15. [Deploy to Heroku](https://github.com/potchangelo/django-junraider/tree/15-deploy-heroku)
+
+- [Branch ของเว็บพรีวิว](https://github.com/potchangelo/django-junraider/tree/preview) -> จะมีการปรับแต่งโค้ดนิดนึงให้ใช้งานบน Host อย่างเหมาะสม
+
