@@ -42,13 +42,19 @@ pipenv shell
 python manage.py migrate
 ```
 
-8. เปิดเว็บโปรเจ็ค
+8. สร้าง Admin (Super user) ให้เรียบร้อย
+
+```
+python manage.py createsuperuser
+```
+
+9. เปิดเว็บโปรเจ็ค
 
 ```
 python manage.py runserver
 ```
 
-9. (Optional) ตั้งค่า VSCode Python interpreter ของโปรเจ็คนี้ เพื่อให้ VSCode อ่านข้อมูล Package และแสดง Autocomplete ของโปรเจ็คนี้ได้อย่างสมบูรณ์ วิธีการจะอยู่ในคลิป "สอน Django เบื้่องต้น จนใช้ได้จริง #01"
+10. (Optional) ตั้งค่า VSCode Python interpreter ของโปรเจ็คนี้ เพื่อให้ VSCode อ่านข้อมูล Package และแสดง Autocomplete ของโปรเจ็คนี้ได้อย่างสมบูรณ์ วิธีการจะอยู่ในคลิป "สอน Django เบื้่องต้น จนใช้ได้จริง #01" (อาจต้องปิด/เปิด VSCode ใหม่ ซักรอบนึง)
 
 
 ## Github branches for each lessons
