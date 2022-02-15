@@ -71,3 +71,14 @@ python manage.py runserver
 
 - [Branch ของเว็บพรีวิว](https://github.com/potchangelo/django-junraider/tree/preview) -> จะมีการปรับแต่งโค้ดนิดนึงให้ใช้งานบน Host อย่างเหมาะสม
 
+
+## Credits
+
+https://unsplash.com/photos/66IZaW9LIpI
+
+https://unsplash.com/photos/AfhSPYdkxiU
+
+https://unsplash.com/photos/1Fsb2C7hxQ0
+
+https://unsplash.com/photos/OYUzC-h1glg
+
