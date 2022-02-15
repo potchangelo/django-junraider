@@ -16,15 +16,14 @@ def subscription(request):
     if request.method == 'POST':
         form = SubscriptionModelForm(request.POST)
         if form.is_valid():
-            form.save()
+            # form.save()
             return HttpResponseRedirect(reverse('subscription_thankyou'))
     else:
         form = SubscriptionModelForm()
-    
+
     # GET
     context = {'form': form}
     return render(request, 'app_general/subscription_form.html', context)
 
 def subscription_thankyou(request):
     return render(request, 'app_general/subscription_thankyou.html')
-    
