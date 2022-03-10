@@ -2,14 +2,14 @@
 
 https://django-junraider.herokuapp.com/
 
-ตัวอย่างโปรเจ็ค Django จากคลิป "สอน Django เบื้่องต้น จนใช้ได้จริง #01" ของ Zinglecode
+ตัวอย่างโปรเจ็ค Django จากคลิป "สอน Django เบื้องต้น จนใช้ได้จริง #1" ของ Zinglecode
 
 Note: ทำขึ้นมาเพื่อการศึกษาทางการเขียนโปรแกรมเท่านั้น เนื้อหาบนเว็บไม่ใช่สินค้าหรือบริการที่มีอยู่จริง
 
 
 ## YouTube video
 
-- YouTube link coming soon
+https://www.youtube.com/watch?v=BBL8W-lpNHw
 
 
 ## Install and Run project by VSCode
@@ -54,7 +54,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-10. (Optional) ตั้งค่า VSCode Python interpreter ของโปรเจ็คนี้ เพื่อให้ VSCode อ่านข้อมูล Package และแสดง Autocomplete ของโปรเจ็คนี้ได้อย่างสมบูรณ์ วิธีการจะอยู่ในคลิป "สอน Django เบื้่องต้น จนใช้ได้จริง #01" (อาจต้องปิด/เปิด VSCode ใหม่ ซักรอบนึง)
+10. (Optional) ตั้งค่า VSCode Python interpreter ของโปรเจ็คนี้ เพื่อให้ VSCode อ่านข้อมูล Package และแสดง Autocomplete ของโปรเจ็คนี้ได้อย่างสมบูรณ์ วิธีการจะอยู่ในคลิป "สอน Django เบื้องต้น จนใช้ได้จริง #1" (อาจต้องปิด/เปิด VSCode ใหม่ ซักรอบนึง)
 
 
 ## Github branches for each lessons
