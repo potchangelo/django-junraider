@@ -6,23 +6,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('app_foods', '0001_initial'),
+        ("app_foods", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='food',
-            name='isPremium',
+            model_name="food",
+            name="isPremium",
             field=models.BooleanField(default=False),
         ),
         migrations.AlterField(
-            model_name='food',
-            name='promotionEndAt',
+            model_name="food",
+            name="promotionEndAt",
             field=models.DateTimeField(null=True),
         ),
         migrations.AlterField(
-            model_name='food',
-            name='title',
+            model_name="food",
+            name="title",
             field=models.CharField(max_length=60),
         ),
     ]

@@ -6,13 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('app_foods', '0005_alter_food_description_alter_food_promotion_end_at_and_more'),
+        (
+            "app_foods",
+            "0005_alter_food_description_alter_food_promotion_end_at_and_more",
+        ),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='food',
-            name='image_relative_url',
+            model_name="food",
+            name="image_relative_url",
             field=models.CharField(blank=True, max_length=50, null=True),
         ),
     ]
