@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Food(models.Model):
     title = models.CharField(max_length=60)
     price = models.IntegerField()
@@ -12,4 +13,4 @@ class Food(models.Model):
     image_relative_url = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self) -> str:
-        return '{} (id: {})'.format(self.title, self.id)
+        return "{} (id: {})".format(self.title, self.id)

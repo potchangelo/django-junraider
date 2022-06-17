@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('app_foods', '0002_alter_food_ispremium_alter_food_promotionendat_and_more'),
+        ("app_foods", "0002_alter_food_ispremium_alter_food_promotionendat_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='food',
-            name='description',
+            model_name="food",
+            name="description",
             field=models.TextField(null=True),
         ),
         migrations.AddField(
-            model_name='food',
-            name='specialPrice',
+            model_name="food",
+            name="specialPrice",
             field=models.IntegerField(null=True),
         ),
     ]

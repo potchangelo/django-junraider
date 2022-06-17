@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('app_foods', '0004_rename_ispremium_food_is_premium_and_more'),
-        ('app_general', '0004_alter_subscription_food'),
+        ("app_foods", "0004_rename_ispremium_food_is_premium_and_more"),
+        ("app_general", "0004_alter_subscription_food"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='subscription',
-            name='food',
+            model_name="subscription",
+            name="food",
         ),
         migrations.AddField(
-            model_name='subscription',
-            name='food_set',
-            field=models.ManyToManyField(to='app_foods.Food'),
+            model_name="subscription",
+            name="food_set",
+            field=models.ManyToManyField(to="app_foods.Food"),
         ),
     ]
