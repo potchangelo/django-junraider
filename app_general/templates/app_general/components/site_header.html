@@ -10,7 +10,16 @@
   <a class="site-header-item" href="{% url 'about' %}">
     <span>เกี่ยวกับ</span>
   </a>
-  <a class="site-header-item" href="{% url 'login' %}">
-    <span>เข้าสู่ระบบ</span>
-  </a>
+  {% if user.is_authenticated %}
+    <a class="site-header-item" href="#">
+      <span>{{ user.username }}</span>
+    </a>
+    <a class="site-header-item" href="{% url 'logout' %}">
+      <span>ออกจากระบบ</span>
+    </a>
+  {% else %}
+    <a class="site-header-item" href="{% url 'login' %}">
+      <span>เข้าสู่ระบบ</span>
+    </a>
+  {% endif %}
 </header>
