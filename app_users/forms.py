@@ -17,6 +17,8 @@ class UserProfileForm(forms.ModelForm):
 
 
 class ExtendedProfileForm(forms.ModelForm):
+    prefix = "extended"
+
     class Meta:
         model = Profile
         fields = ("address", "phone")
