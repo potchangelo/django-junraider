@@ -11,7 +11,7 @@
     <span>เกี่ยวกับ</span>
   </a>
   {% if user.is_authenticated %}
-    <a class="site-header-item" href="#">
+    <a class="site-header-item" href="{% url 'dashboard' %}">
       <span>{{ user.username }}</span>
     </a>
     <a class="site-header-item" href="{% url 'logout' %}">
