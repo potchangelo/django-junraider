@@ -1,6 +1,6 @@
 {% extends 'app_general/components/base.html' %}
 
-{% block site_title %}แดชบอร์ด - {% endblock %}
+{% block site_title %}ข้อมูลผู้ใช้ - {% endblock %}
 
 {% block content %}
 <section class="content-section content-section-single">
@@ -10,8 +10,16 @@
       <a href="{% url 'dashboard' %}">แดชบอร์ด</a>
       <a href="{% url 'profile' %}">ข้อมูลผู้ใช้</a>
     </p>
-    <h4>แดชบอร์ด</h4>
-    <p>เข้ามาได้แล้วโว้ย</p>
+    <h4>ข้อมูลผู้ใช้</h4>
+    <form action="{% url 'profile' %}" method="POST">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      {{ form.as_p }}
+      {{ extended_form.as_p }}
+      <div class="form-field">
+        <button class="button button-primary" type="submit">บันทึก</button>
+      </div>
+    </form>
   </div>
 </section>
 {% endblock %}
