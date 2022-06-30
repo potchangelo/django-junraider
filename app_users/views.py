@@ -1,10 +1,12 @@
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from django.core.mail import EmailMessage
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
 from app_users.forms import ExtendedProfileForm, RegisterForm, UserProfileForm
+from app_users.models import CustomUser
 
 # Create your views here.
 def register(request: HttpRequest):
@@ -12,16 +14,32 @@ def register(request: HttpRequest):
     if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid():
-            # Register & Login
-            user = form.save()
-            login(request, user)
-            return HttpResponseRedirect(reverse("home"))
+            # Register and wait for activation
+            user: CustomUser = form.save(commit=False)
+            user.is_active = False
+            user.save()
+
+            # login(request, user)
+
+            # Build email body
+            # ...
+
+            # Send email
+            email = EmailMessage(to=[user.email], subject="Activate account หน่อยครับ", body="กดยืนยันตัวตนซะดีๆ")
+            email.send()
+
+            # Change redirect to register thank you
+            return HttpResponseRedirect(reverse("register_thankyou"))
     else:
         form = RegisterForm()
 
     # GET
     context = {"form": form}
     return render(request, "app_users/register.html", context)
+
+
+def register_thankyou(request: HttpRequest):
+    return render(request, "app_users/register_thankyou.html")
 
 
 @login_required
