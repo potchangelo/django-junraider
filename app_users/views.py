@@ -3,10 +3,14 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render
+from django.template.loader import render_to_string
 from django.urls import reverse
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from app_users.forms import ExtendedProfileForm, RegisterForm, UserProfileForm
 from app_users.models import CustomUser
+from app_users.utils.activation_token_generator import activation_token_generator
 
 # Create your views here.
 def register(request: HttpRequest):
@@ -22,10 +26,16 @@ def register(request: HttpRequest):
             # login(request, user)
 
             # Build email body
-            # ...
+            context = {
+                "protocol": request.scheme,
+                "host": request.get_host(),
+                "uidb64": urlsafe_base64_encode(force_bytes(user.id)),
+                "token": activation_token_generator.make_token(user)
+            }
+            email_body = render_to_string("app_users/activate_email.html", context=context)
 
             # Send email
-            email = EmailMessage(to=[user.email], subject="Activate account หน่อยครับ", body="กดยืนยันตัวตนซะดีๆ")
+            email = EmailMessage(to=[user.email], subject="Activate account หน่อยครับ", body=email_body)
             email.send()
 
             # Change redirect to register thank you
@@ -40,6 +50,25 @@ def register(request: HttpRequest):
 
 def register_thankyou(request: HttpRequest):
     return render(request, "app_users/register_thankyou.html")
+
+
+def activate(request: HttpRequest, uidb64: str, token: str):
+    title = "Activate account เรียบร้อย"
+    content = "คุณสามารถเข้าสู่ระบบได้เลย"
+    id = urlsafe_base64_decode(uidb64).decode()
+    try:
+        user = CustomUser.objects.get(id=id)
+        if not activation_token_generator.check_token(user, token):
+            raise Exception("Check token false")
+        user.is_active = True
+        user.save()
+    except:
+        print("Activate ไม่ผ่าน")
+        title = "Activate account ไม่ผ่าน"
+        content = "เป็นไปได้ว่าลิ้งค์ไม่ถูกต้อง หรือหมดอายุไปแล้ว"
+
+    context = {"title": title, "content": content}
+    return render(request, "app_users/activate.html", context)
 
 
 @login_required
