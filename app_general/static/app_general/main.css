@@ -22,7 +22,7 @@
   box-sizing: border-box;
 }
 
-html {
+body {
   color: #333333;
   font-family: 'Mitr', sans-serif;
   font-weight: 300;
@@ -252,4 +252,10 @@ input[type='email']:focus {
 .food-title a:not(:hover) {
   color: #111111;
   text-decoration: none;
+}
+
+/* Dark theme */
+body.dark {
+  color: white;
+  background-color: #444444;
 }
