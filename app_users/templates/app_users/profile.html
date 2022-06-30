@@ -12,6 +12,9 @@
       <a href="{% url 'password_change' %}">เปลี่ยนรหัสผ่าน</a>
     </p>
     <h4>ข้อมูลผู้ใช้</h4>
+    {% if flash_message %}
+      <p style="color: rgb(0, 171, 0);">{{ flash_message }}</p>
+    {% endif %}
     <form action="{% url 'profile' %}" method="POST">
       {% csrf_token %}
       {{ form.non_field_errors }}
