@@ -9,7 +9,7 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from app_users.forms import ExtendedProfileForm, RegisterForm, UserProfileForm
-from app_users.models import CustomUser
+from app_users.models import CustomUser, UserFavoriteFood
 from app_users.utils.activation_token_generator import activation_token_generator
 
 # Create your views here.
@@ -73,7 +73,9 @@ def activate(request: HttpRequest, uidb64: str, token: str):
 
 @login_required
 def dashboard(request: HttpRequest):
-    return render(request, "app_users/dashboard.html")
+    favorite_food_pivots = request.user.favorite_food_pivot_set.order_by("-level")
+    context = {"favorite_food_pivots": favorite_food_pivots}
+    return render(request, "app_users/dashboard.html", context)
 
 @login_required
 def profile(request: HttpRequest):
