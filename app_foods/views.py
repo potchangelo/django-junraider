@@ -17,15 +17,23 @@ def foods(request: HttpRequest):
 
 def food(request: HttpRequest, food_id):
     one_food = None
+    is_favorite_food = False
     try:
         one_food = Food.objects.get(id=food_id)
+        if request.user.is_authenticated:
+            user_favorite_food = UserFavoriteFood.objects.get(
+                user=request.user,
+                food=one_food
+            )
+            is_favorite_food = user_favorite_food is not None
     except:
         print("หาไม่เจอ หรือเธอไม่มี")
 
     form = FavoriteFoodForm()
     context = {
         "food": one_food,
-        "form": form
+        "form": form,
+        "is_favorite_food": is_favorite_food
     }
     return render(request, "app_foods/food.html", context)
 

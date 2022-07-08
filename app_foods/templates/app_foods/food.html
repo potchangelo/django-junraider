@@ -27,16 +27,20 @@
           {% endif %}
           <p>{{ food.description }}</p>
           {% if user.is_authenticated %}
-            <form action="{% url 'favorite_food' food.id %}" method="post">
-              {% csrf_token %}
-              <div class="form-field">
-                {{ form.level }}
-                {{ form.level.errors }}
-              </div>
-              <div>
-                <button class="button button-primary" type="submit">เพิ่มเมนูโปรด</button>
-              </div>
-            </form>
+            {% if not is_favorite_food %}
+              <form action="{% url 'favorite_food' food.id %}" method="post">
+                {% csrf_token %}
+                <div class="form-field">
+                  {{ form.level }}
+                  {{ form.level.errors }}
+                </div>
+                <div>
+                  <button class="button button-primary" type="submit">เพิ่มเมนูโปรด</button>
+                </div>
+              </form>
+            {% else %}
+              <p>นี่คือเมนูโปรดของคุณ</p>
+            {% endif %}
           {% else %}
             <p>
               <a class="button button-primary" href="{% url 'subscription' %}">ลงทะเบียนรับโปรโมชั่น</a>
