@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from app_foods.forms import FavoriteFoodForm
 from app_foods.models import Food
 from app_users.models import UserFavoriteFood
@@ -34,9 +35,11 @@ def favorite_food(request: HttpRequest, food_id):
     if request.method == "POST":
         form = FavoriteFoodForm(request.POST)
         if form.is_valid():
-            user_favorite_food: UserFavoriteFood = form.save(commit=False)
-            user_favorite_food.user = request.user
-            user_favorite_food.food = Food(id=food_id)
-            user_favorite_food.save()
+            obj, is_created = UserFavoriteFood.objects.update_or_create(
+                user=request.user,
+                food=Food(id=food_id),
+                defaults={"level": form.cleaned_data.get("level")}
+            )
+            print("Create favorite" if is_created else "Update favorite")
 
-    return HttpResponseRedirect(request.headers.get("referer"))
+    return HttpResponseRedirect(reverse("food", args=[food_id]))

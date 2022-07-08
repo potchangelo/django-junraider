@@ -37,3 +37,11 @@ class UserFavoriteFood(models.Model):
         on_delete=models.CASCADE,
         related_name="favorited_user_pivot_set"
     )
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=("user", "food"),
+                name="unique_user_food"
+            )
+        ]
