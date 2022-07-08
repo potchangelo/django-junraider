@@ -27,7 +27,7 @@
           {% endif %}
           <p>{{ food.description }}</p>
           {% if user.is_authenticated %}
-            <form>
+            <form action="{% url 'favorite_food' food.id %}" method="post">
               {% csrf_token %}
               <div class="form-field">
                 {{ form.level }}
