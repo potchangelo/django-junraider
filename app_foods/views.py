@@ -51,3 +51,10 @@ def favorite_food(request: HttpRequest, food_id):
             print("Create favorite" if is_created else "Update favorite")
 
     return HttpResponseRedirect(reverse("food", args=[food_id]))
+
+
+@login_required
+def unfavorite_food(request: HttpRequest, food_id):
+    if request.method == "POST":
+        request.user.favorite_food_set.remove(Food(id=food_id))
+    return HttpResponseRedirect(reverse("dashboard"))

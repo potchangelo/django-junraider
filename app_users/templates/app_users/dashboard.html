@@ -34,6 +34,10 @@
           {% if food.promotion_end_at is not None %}
             <p>โปรโมชั่นถึงวันที่ {{ food.promotion_end_at|date:'j N Y' }}</p>
           {% endif %}
+          <form action="{% url 'unfavorite_food' food.id %}" method="post">
+            {% csrf_token %}
+            <p><button type="submit">ลบเมนูโปรด</button></p>
+          </form>
         </div>
         <hr>
       {% endwith %}
