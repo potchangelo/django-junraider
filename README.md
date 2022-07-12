@@ -82,7 +82,22 @@ python manage.py runserver
 
 ### Season 2
 
-1. [Login](https://github.com/potchangelo/django-junraider/tree/16-login)
+1. [Log in](https://github.com/potchangelo/django-junraider/tree/16-login)
+2. [Log out](https://github.com/potchangelo/django-junraider/tree/17-logout)
+3. [Register](https://github.com/potchangelo/django-junraider/tree/18-register)
+4. [Dashboard](https://github.com/potchangelo/django-junraider/tree/19-dashboard)
+5. [Profile](https://github.com/potchangelo/django-junraider/tree/20-profile)
+6. [Password change](https://github.com/potchangelo/django-junraider/tree/21-password-change)
+7. [Password reset](https://github.com/potchangelo/django-junraider/tree/22-password-reset)
+8. [Custom user model](https://github.com/potchangelo/django-junraider/tree/23-custom-user-model)
+9. [Activate account by email](https://github.com/potchangelo/django-junraider/tree/24-activate-account-by-email)
+10. [Log in by email](https://github.com/potchangelo/django-junraider/tree/25-login-by-email)
+11. [Cookies](https://github.com/potchangelo/django-junraider/tree/26-cookies)
+12. [Favorite food 1](https://github.com/potchangelo/django-junraider/tree/27-favorite-food-1)
+13. [Favorite food 2](https://github.com/potchangelo/django-junraider/tree/28-favorite-food-2)
+14. [404, 403, 500](https://github.com/potchangelo/django-junraider/tree/29-404-403-500)
+15. [Deploy to Heroku again](https://github.com/potchangelo/django-junraider/tree/30-deploy-heroku-2)
+16. Season 2 final code coming soon
 
 ### On preview web
 
