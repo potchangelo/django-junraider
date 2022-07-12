@@ -1,5 +1,13 @@
 console.log('จันทร์ไรเดอร์');
 
+// Site header
+const siteHeaderToggleMenuButton = document.querySelector('.site-header-toggle-menu-button');
+const siteHeaderMenu = document.querySelector('.site-header-menu');
+siteHeaderToggleMenuButton.addEventListener('click', () => {
+  siteHeaderMenu.classList.toggle('is-active')
+});
+
+// Subscription form
 const subscriptionForm = document.querySelector('.subscription-form');
 
 function foodSetValidation(event) {

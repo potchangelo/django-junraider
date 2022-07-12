@@ -140,8 +140,10 @@ a {
   border-bottom: 1px solid #eeeeee;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 50px;
+  position: relative;
+  z-index: 11;
 }
 
 .site-header-item {
@@ -151,7 +153,7 @@ a {
   line-height: 1;
   text-decoration: none;
   display: flex;
-  padding: 0px 10px;
+  padding: 10px;
   align-items: center;
   transition: background-color 0.3s;
 }
@@ -164,6 +166,47 @@ a {
   display: inline-block;
   height: 30px;
   margin-right: 6px;
+}
+
+.site-header-menu {
+  background-color: white;
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  z-index: 12;
+}
+
+.site-header-menu.is-active {
+  display: block;
+}
+
+.site-header-toggle-menu-button {
+  cursor: pointer;
+  user-select: none;
+}
+
+@media screen and (min-width: 720px) {
+  .site-header {
+    justify-content: flex-start;
+  }
+
+  .site-header-menu {
+    background-color: transparent;
+    border-bottom: none;
+    box-shadow: none;
+    display: flex !important;
+    justify-content: flex-start;
+    position: relative;
+    top: 0;
+  }
+
+  .site-header-toggle-menu-button {
+    display: none;
+  }
 }
 
 /* Site footer */
