@@ -2,14 +2,16 @@
 
 https://django-junraider.herokuapp.com/
 
-ตัวอย่างโปรเจ็ค Django จากคลิป "สอน Django เบื้องต้น จนใช้ได้จริง # 1" ของ Zinglecode
+ตัวอย่างโปรเจ็ค Django จากคลิป "สอน Django เบื้องต้น จนใช้ได้จริง" ของ Zinglecode
 
 Note: ทำขึ้นมาเพื่อการศึกษาทางการเขียนโปรแกรมเท่านั้น เนื้อหาบนเว็บไม่ใช่สินค้าหรือบริการที่มีอยู่จริง
 
 
 ## YouTube video
 
-https://www.youtube.com/watch?v=BBL8W-lpNHw
+Season 1 : https://www.youtube.com/watch?v=BBL8W-lpNHw
+
+Season 2 : อยู่ระหว่างการถ่ายทำ
 
 
 ## Install and Run project by VSCode
@@ -59,6 +61,8 @@ python manage.py runserver
 
 ## Github branches for each lessons
 
+### Season 1
+
 1. [Setup and Run](https://github.com/potchangelo/django-junraider/tree/01-setup)
 2. [Projects x Apps](https://github.com/potchangelo/django-junraider/tree/02-project-apps)
 3. [urls x views](https://github.com/potchangelo/django-junraider/tree/03-urls-views)
@@ -74,8 +78,15 @@ python manage.py runserver
 13. [static CSS JS](https://github.com/potchangelo/django-junraider/tree/13-static-css-js)
 14. [settings x dotenv](https://github.com/potchangelo/django-junraider/tree/14-settings-dotenv)
 15. [Deploy to Heroku](https://github.com/potchangelo/django-junraider/tree/15-deploy-heroku)
+16. [Season 1 final code](https://github.com/potchangelo/django-junraider/tree/season-1)
 
-- [Branch ของเว็บพรีวิว](https://github.com/potchangelo/django-junraider/tree/preview) -> จะมีการปรับแต่งโค้ดนิดนึงให้ใช้งานบน Host อย่างเหมาะสม
+### Season 2
+
+1. [Login](https://github.com/potchangelo/django-junraider/tree/16-login)
+
+### On preview web
+
+[Branch ของเว็บพรีวิว](https://github.com/potchangelo/django-junraider/tree/preview) -> จะมีการปรับแต่งโค้ดนิดนึงให้ใช้งานบน Host อย่างเหมาะสม
 
 
 ## Credits
