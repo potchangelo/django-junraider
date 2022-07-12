@@ -15,7 +15,7 @@
     <h5>เมนูโปรด</h5>
     {% for food_pivot in favorite_food_pivots %}
       {% with food=food_pivot.food %}
-        <div>
+        <div class="box">
           <h6>
             <a href="{% url 'food' food.id %}">{{ food.title }}</a>
           </h6>
@@ -36,10 +36,9 @@
           {% endif %}
           <form action="{% url 'unfavorite_food' food.id %}" method="post">
             {% csrf_token %}
-            <p><button type="submit">ลบเมนูโปรด</button></p>
+            <div><button type="submit">ลบเมนูโปรด</button></div>
           </form>
         </div>
-        <hr>
       {% endwith %}
     {% endfor %}
   </div>
