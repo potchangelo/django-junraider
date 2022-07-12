@@ -8,7 +8,7 @@ from app_users.models import CustomUser, Profile
 class RegisterForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = UserCreationForm.Meta.fields + ("email", )
+        fields = UserCreationForm.Meta.fields + ("email",)
 
 
 class UserProfileForm(forms.ModelForm):
@@ -27,6 +27,4 @@ class ExtendedProfileForm(forms.ModelForm):
             "address": "ที่อยู่",
             "phone": "เบอร์โทรศัพท์",
         }
-        widgets = {
-            "address": forms.Textarea(attrs={"rows": 3})
-        }
+        widgets = {"address": forms.Textarea(attrs={"rows": 3})}

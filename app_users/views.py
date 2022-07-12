@@ -30,12 +30,16 @@ def register(request: HttpRequest):
                 "protocol": request.scheme,
                 "host": request.get_host(),
                 "uidb64": urlsafe_base64_encode(force_bytes(user.id)),
-                "token": activation_token_generator.make_token(user)
+                "token": activation_token_generator.make_token(user),
             }
-            email_body = render_to_string("app_users/activate_email.html", context=context)
+            email_body = render_to_string(
+                "app_users/activate_email.html", context=context
+            )
 
             # Send email
-            email = EmailMessage(to=[user.email], subject="Activate account หน่อยครับ", body=email_body)
+            email = EmailMessage(
+                to=[user.email], subject="Activate account หน่อยครับ", body=email_body
+            )
             email.send()
 
             # Change redirect to register thank you
@@ -76,6 +80,7 @@ def dashboard(request: HttpRequest):
     favorite_food_pivots = request.user.favorite_food_pivot_set.order_by("-level")
     context = {"favorite_food_pivots": favorite_food_pivots}
     return render(request, "app_users/dashboard.html", context)
+
 
 @login_required
 def profile(request: HttpRequest):
@@ -119,7 +124,7 @@ def profile(request: HttpRequest):
     context = {
         "form": form,
         "extended_form": extended_form,
-        "flash_message": flash_message
+        "flash_message": flash_message,
     }
     response = render(request, "app_users/profile.html", context)
     if is_saved:

@@ -10,5 +10,5 @@ urlpatterns = [
         views.subscription_thankyou,
         name="subscription_thankyou",
     ),
-    path("change-theme", views.change_theme, name="change_theme")
+    path("change-theme", views.change_theme, name="change_theme"),
 ]

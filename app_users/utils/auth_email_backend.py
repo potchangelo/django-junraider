@@ -9,8 +9,10 @@ class EmailBackend(ModelBackend):
         print("Custom auth ... " + username)
         user: CustomUser = None
         try:
-            user = CustomUser.objects.get(Q(username=username)|Q(email=username))
-            if not user.check_password(password) or not self.user_can_authenticate(user):
+            user = CustomUser.objects.get(Q(username=username) | Q(email=username))
+            is_wrong_password = not user.check_password(password)
+            is_user_inactive = not self.user_can_authenticate(user)
+            if is_wrong_password or is_user_inactive:
                 raise Exception("Wrong password or inactive user")
         except:
             return None
