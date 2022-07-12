@@ -54,7 +54,7 @@ body.dark .button:not(.button-primary) {
 /* Homepage */
 body.dark .home-landing {
   background-color: #333333;
-  background-image: none;
+  background-image: url('home-bg-dark.jpg');
 }
 
 /* Foods */

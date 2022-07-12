@@ -1,7 +1,11 @@
 {% load static %}
 <header class="site-header">
   <a class="site-header-item site-header-brand" href="{% url 'home' %}">
-    <img src="{% static 'app_general/logo.png' %}">
+    {% if request.COOKIES.theme == "dark" %}
+      <img src="{% static 'app_general/logo-dark.png' %}">
+    {% else %}
+      <img src="{% static 'app_general/logo.png' %}">
+    {% endif %}
     <span>จันทร์ไรเดอร์</span>
   </a>
   <div class="site-header-menu">
