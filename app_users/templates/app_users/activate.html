@@ -1,0 +1,12 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}{{ title }} - {% endblock %}
+
+{% block content %}
+<section class="content-section content-section-single">
+  <div class="content-container content-container-narrow">
+    <h3 class="content-title">{{ title }}</h3>
+    <p>{{ content }}</p>
+  </div>
+</section>
+{% endblock %}

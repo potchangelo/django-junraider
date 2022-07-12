@@ -26,9 +26,26 @@
             <p>โปรโมชั่นถึงวันที่ {{ food.promotion_end_at|date:'j N Y' }}</p>
           {% endif %}
           <p>{{ food.description }}</p>
-          <p>
-            <a class="button button-primary" href="{% url 'subscription' %}">ลงทะเบียนรับโปรโมชั่น</a>
-          </p>
+          {% if user.is_authenticated %}
+            {% if not is_favorite_food %}
+              <form action="{% url 'favorite_food' food.id %}" method="post">
+                {% csrf_token %}
+                <div class="form-field">
+                  {{ form.level }}
+                  {{ form.level.errors }}
+                </div>
+                <div>
+                  <button class="button button-primary" type="submit">เพิ่มเมนูโปรด</button>
+                </div>
+              </form>
+            {% else %}
+              <p>นี่คือเมนูโปรดของคุณ</p>
+            {% endif %}
+          {% else %}
+            <p>
+              <a class="button button-primary" href="{% url 'subscription' %}">ลงทะเบียนรับโปรโมชั่น</a>
+            </p>
+          {% endif %}
         </div>
       </div>
     {% else %}

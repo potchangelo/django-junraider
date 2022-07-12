@@ -1,0 +1,47 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}แดชบอร์ด - {% endblock %}
+
+{% block content %}
+<section class="content-section content-section-single">
+  <div class="content-container content-container-narrow">
+    <h3 class="content-title">สวัสดี {{ user.username }}</h3>
+    <p>
+      <a href="{% url 'dashboard' %}">แดชบอร์ด</a>
+      <a href="{% url 'profile' %}">ข้อมูลผู้ใช้</a>
+      <a href="{% url 'password_change' %}">เปลี่ยนรหัสผ่าน</a>
+    </p>
+    <h4>แดชบอร์ด</h4>
+    <h5>เมนูโปรด</h5>
+    {% for food_pivot in favorite_food_pivots %}
+      {% with food=food_pivot.food %}
+        <div>
+          <h6>
+            <a href="{% url 'food' food.id %}">{{ food.title }}</a>
+          </h6>
+          <p>{{ food_pivot.level_label }}</p>
+          {% if food.special_price is not None %}
+            <p>
+              <b>{{ food.special_price|floatformat:'g' }} บาท</b>
+              <del class="text-gray">{{ food.price|floatformat:'g' }} บาท</del>
+            </p>
+          {% else %}
+            <p><b>{{ food.price|floatformat:'g' }} บาท</b></p>
+          {% endif %}
+          {% if food.is_premium %}
+            <p>*** เมนูพิเศษสุด Premium</p>
+          {% endif %}
+          {% if food.promotion_end_at is not None %}
+            <p>โปรโมชั่นถึงวันที่ {{ food.promotion_end_at|date:'j N Y' }}</p>
+          {% endif %}
+          <form action="{% url 'unfavorite_food' food.id %}" method="post">
+            {% csrf_token %}
+            <p><button type="submit">ลบเมนูโปรด</button></p>
+          </form>
+        </div>
+        <hr>
+      {% endwith %}
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}ขอบคุณสำหรับการลงทะเบียน - {% endblock %}
+
+{% block content %}
+<section class="content-section content-section-single">
+  <div class="content-container content-container-narrow">
+    <h3 class="content-title">ขอบคุณสำหรับการลงทะเบียน</h3>
+    <p>ระบบได้ส่งอีเมลยืนยันตัวตนให้คุณเรียบร้อยแล้ว กรุณาตรวจสอบ</p>
+    <p>
+      <a class="button button-primary" href="{% url 'login' %}">เข้าสู่ระบบ</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

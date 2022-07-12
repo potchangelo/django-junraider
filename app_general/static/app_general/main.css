@@ -22,7 +22,7 @@
   box-sizing: border-box;
 }
 
-html {
+body {
   color: #333333;
   font-family: 'Mitr', sans-serif;
   font-weight: 300;
@@ -133,8 +133,6 @@ a {
   display: flex;
   justify-content: flex-start;
   height: 50px;
-  position: relative;
-  z-index: 100;
 }
 
 .site-header-item {
@@ -150,7 +148,7 @@ a {
 }
 
 .site-header-item:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .site-header-brand img {
@@ -256,35 +254,8 @@ input[type='email']:focus {
   text-decoration: none;
 }
 
-/* Purpose banner */
-.purpose-banner {
-  color: rgb(230, 230, 230);
-  background-color: rgb(36, 36, 36);
-  font-size: 12px;
-  position: relative;
-  z-index: 101;
-}
-
-.purpose-banner .purpose-banner-item {
-  line-height: 1.4;
-  padding: 8px;
-}
-
-.purpose-banner .purpose-banner-item:not(:first-of-type) {
-  padding-top: 0px;
-}
-
-.purpose-banner a {
+/* Dark theme */
+body.dark {
   color: white;
-}
-
-@media screen and (min-width: 768px) {
-  .purpose-banner {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .purpose-banner .purpose-banner-item:not(:first-of-type) {
-    padding-top: 8px;
-  }
+  background-color: #444444;
 }

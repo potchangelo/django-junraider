@@ -1,0 +1,29 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}ข้อมูลผู้ใช้ - {% endblock %}
+
+{% block content %}
+<section class="content-section content-section-single">
+  <div class="content-container content-container-narrow">
+    <h3 class="content-title">สวัสดี {{ user.username }}</h3>
+    <p>
+      <a href="{% url 'dashboard' %}">แดชบอร์ด</a>
+      <a href="{% url 'profile' %}">ข้อมูลผู้ใช้</a>
+      <a href="{% url 'password_change' %}">เปลี่ยนรหัสผ่าน</a>
+    </p>
+    <h4>ข้อมูลผู้ใช้</h4>
+    {% if flash_message %}
+      <p style="color: rgb(0, 171, 0);">{{ flash_message }}</p>
+    {% endif %}
+    <form action="{% url 'profile' %}" method="POST">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      {{ form.as_p }}
+      {{ extended_form.as_p }}
+      <div class="form-field">
+        <button class="button button-primary" type="submit">บันทึก</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

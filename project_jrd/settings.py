@@ -31,12 +31,13 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG") == "True"
 
 production_host = os.getenv("PRODUCTION_HOST")
-ALLOWED_HOSTS = [production_host] if production_host is not None else []
+ALLOWED_HOSTS = [production_host] if production_host is not None else ["127.0.0.1"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "app_users.apps.AppUsersConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -132,7 +133,37 @@ STATIC_URL = "static/"
 STATIC_ROOT = "static/"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Authentication
+
+AUTH_USER_MODEL = "app_users.CustomUser"
+AUTHENTICATION_BACKENDS = [
+    "app_users.utils.auth_email_backend.EmailBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
+LOGIN_URL = "login"
+
+
+# Email
+
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = BASE_DIR / "test_inbox"
+    PASSWORD_RESET_TIMEOUT = 60
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_HOST = os.getenv("EMAIL_HOST")
+    EMAIL_PORT = os.getenv("EMAIL_PORT")
+    EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS") == "True"
+    EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+    EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+    PASSWORD_RESET_TIMEOUT = 600

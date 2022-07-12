@@ -1,0 +1,41 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}สมัครสมาชิก - {% endblock %}
+
+{% block content %}
+<section class="content-section content-section-single">
+  <div class="content-container content-container-narrow">
+    <h3 class="content-title">สมัครสมาชิก</h3>
+    <form action="{% url 'register' %}" method="POST">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="form-field">
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        {{ form.username.errors }}
+      </div>
+      <div class="form-field">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.email.errors }}
+      </div>
+      <div class="form-field">
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+      </div>
+      <div class="form-field">
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+      </div>
+      <div class="form-field">
+        <button class="button button-primary" type="submit">สมัครสมาชิก</button>
+      </div>
+      <p>
+        <a href="{% url 'login' %}">เข้าสู่ระบบ</a>
+      </p>
+    </form>
+  </div>
+</section>
+{% endblock %}

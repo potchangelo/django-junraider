@@ -112,3 +112,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Django test email folder
+test_inbox/
+
+# Django production static folder
+static/

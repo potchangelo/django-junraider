@@ -13,8 +13,7 @@
   <link rel="stylesheet" href="{% static 'app_general/main.css' %}">
 </head>
 
-<body>
-  {% include 'app_general/components/site_purpose.html' %}
+<body class="{{ request.COOKIES.theme }}">
   {% include 'app_general/components/site_header.html' %}
   {% block content %}{% endblock %}
   {% include 'app_general/components/site_footer.html' %}
