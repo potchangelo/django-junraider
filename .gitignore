@@ -117,4 +117,4 @@ dmypy.json
 test_inbox/
 
 # Django production static folder
-static/
+/static/
