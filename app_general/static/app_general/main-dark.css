@@ -1,0 +1,73 @@
+/* Global */
+body.dark {
+  color: #f4f4f4;
+  background-color: #222222;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+  color: white;
+}
+
+body.dark .box {
+  background-color: #222222;
+}
+
+/* Site header */
+body.dark .site-header {
+  background-color: #222222;
+  border-bottom-color: #111111;
+}
+
+body.dark .site-header-item {
+  color: white;
+}
+
+body.dark .site-header-menu {
+  background-color: #222222;
+  border-bottom-color: #111111;
+}
+
+/* Site footer */
+body.dark .site-footer {
+  background-color: #111111;
+}
+
+/* Form */
+body.dark input[type='text'],
+body.dark input[type='email'],
+body.dark input[type='password'],
+body.dark textarea {
+  color: white;
+  background-color: #333333;
+}
+
+body.dark .button:not(.button-primary) {
+  color: white;
+  background-color: #555555;
+}
+
+/* Homepage */
+body.dark .home-landing {
+  background-color: #333333;
+  background-image: none;
+}
+
+/* Foods */
+body.dark .food-title a:not(:hover) {
+  color: white;
+}
+
+/* Purpose banner */
+body.dark .purpose-banner {
+  background-color: rgb(230, 230, 230);
+  color: rgb(36, 36, 36);
+}
+
+body.dark .purpose-banner a {
+  color: rgb(36, 36, 36);
+}

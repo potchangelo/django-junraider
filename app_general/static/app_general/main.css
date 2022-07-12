@@ -240,6 +240,7 @@ textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  color: #333333;
   border: 1px solid #888888;
   border-radius: 8px;
   font-size: 16px;
@@ -290,7 +291,7 @@ textarea {
 
 /* Homepage */
 .home-landing {
-  background-color: lightblue;
+  background-color: #eeeeee;
   background-image: url('home-bg.jpg');
   background-position: center;
   background-size: cover;
@@ -346,10 +347,4 @@ textarea {
   .purpose-banner .purpose-banner-item:not(:first-of-type) {
     padding-top: 8px;
   }
-}
-
-/* Dark theme */
-body.dark {
-  color: white;
-  background-color: #444444;
 }
