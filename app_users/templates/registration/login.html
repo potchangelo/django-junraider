@@ -6,6 +6,7 @@
 <section class="content-section content-section-single">
   <div class="content-container content-container-narrow">
     <h3 class="content-title">เข้าสู่ระบบ</h3>
+    <!-- TODO : preview branch -> username password paragraph note -->
     <form action="{% url 'login' %}" method="POST">
       {% csrf_token %}
       {{ form.as_p }}

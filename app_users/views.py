@@ -16,14 +16,14 @@ from app_users.utils.activation_token_generator import activation_token_generato
 # Create your views here.
 
 
-# TODO : Comment and change code & template on preview branch
+# TODO : preview branch -> comment code & change template name
 def register(request: HttpRequest):
     # POST
     if request.method == "POST":
         form = RegisterForm(request.POST)
         allowed_register_emails = os.getenv("ALLOWED_REGISTER_EMAILS", "").split(",")
         if form.is_valid():
-            # TODO: Remove checking this on main branch
+            # TODO : main branch -> Remove checking
             if form.cleaned_data.get("email") in allowed_register_emails:
                 # Register and wait for activation
                 user: CustomUser = form.save(commit=False)
@@ -57,6 +57,8 @@ def register(request: HttpRequest):
     # GET
     context = {"form": form}
     return render(request, "app_users/register.html", context)
+
+    # return render(request, "app_users/register_prevent.html")
 
 
 def register_thankyou(request: HttpRequest):

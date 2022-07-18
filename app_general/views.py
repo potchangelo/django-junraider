@@ -23,6 +23,7 @@ def subscription(request: HttpRequest):
     if request.method == "POST":
         form = SubscriptionModelForm(request.POST)
         if form.is_valid():
+            # TODO : main branch -> uncomment
             # form.save()
             return HttpResponseRedirect(reverse("subscription_thankyou"))
     else:
