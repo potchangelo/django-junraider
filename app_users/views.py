@@ -1,4 +1,5 @@
-from django.contrib.auth import login
+import os
+
 from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
 from django.http import HttpRequest, HttpResponseRedirect
@@ -8,42 +9,48 @@ from django.urls import reverse
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
+
 from app_users.forms import ExtendedProfileForm, RegisterForm, UserProfileForm
-from app_users.models import CustomUser, UserFavoriteFood
+from app_users.models import CustomUser
 from app_users.utils.activation_token_generator import activation_token_generator
 
 # Create your views here.
+
+
+# TODO : Compress all_images again
+# TODO : Prevent register on real web (will comment these code)
 def register(request: HttpRequest):
     # POST
     if request.method == "POST":
         form = RegisterForm(request.POST)
+        allowed_register_emails = os.getenv("ALLOWED_REGISTER_EMAILS", "").split(",")
         if form.is_valid():
-            # Register and wait for activation
-            user: CustomUser = form.save(commit=False)
-            user.is_active = False
-            user.save()
+            # TODO: Remove checking this on main branch
+            if form.cleaned_data.get("email") in allowed_register_emails:
+                # Register and wait for activation
+                user: CustomUser = form.save(commit=False)
+                user.is_active = False
+                user.save()
 
-            # login(request, user)
+                # Build email body
+                context = {
+                    "protocol": request.scheme,
+                    "host": request.get_host(),
+                    "uidb64": urlsafe_base64_encode(force_bytes(user.id)),
+                    "token": activation_token_generator.make_token(user),
+                }
+                email_body = render_to_string(
+                    "app_users/activate_email.html", context=context
+                )
 
-            # Build email body
-            context = {
-                "protocol": request.scheme,
-                "host": request.get_host(),
-                "uidb64": urlsafe_base64_encode(force_bytes(user.id)),
-                "token": activation_token_generator.make_token(user),
-            }
-            email_body = render_to_string(
-                "app_users/activate_email.html", context=context
-            )
+                # Send email
+                email = EmailMessage(
+                    to=[user.email], subject="Activate account หน่อยครับ", body=email_body
+                )
+                email.send()
 
-            # Send email
-            email = EmailMessage(
-                to=[user.email], subject="Activate account หน่อยครับ", body=email_body
-            )
-            email.send()
-
-            # Change redirect to register thank you
-            return HttpResponseRedirect(reverse("register_thankyou"))
+                # Change redirect to register thank you
+                return HttpResponseRedirect(reverse("register_thankyou"))
     else:
         form = RegisterForm()
 
