@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+
 from app_foods.forms import FavoriteFoodForm
 from app_foods.models import Food
 from app_users.models import UserFavoriteFood

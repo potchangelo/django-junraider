@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from app_foods.models import Food
 
 # Register your models here.

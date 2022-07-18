@@ -9,7 +9,6 @@ from django.urls import reverse
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
-
 from app_users.forms import ExtendedProfileForm, RegisterForm, UserProfileForm
 from app_users.models import CustomUser
 from app_users.utils.activation_token_generator import activation_token_generator
@@ -45,7 +44,9 @@ def register(request: HttpRequest):
 
                 # Send email
                 email = EmailMessage(
-                    to=[user.email], subject="Activate account หน่อยครับ", body=email_body
+                    to=[user.email],
+                    subject="Activate account หน่อยครับ",
+                    body=email_body,
                 )
                 email.send()
 
