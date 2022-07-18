@@ -1,5 +1,3 @@
-import os
-
 from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
 from django.http import HttpRequest, HttpResponseRedirect
@@ -18,46 +16,41 @@ from app_users.utils.activation_token_generator import activation_token_generato
 
 def register(request: HttpRequest):
     # POST
-    # if request.method == "POST":
-    #     form = RegisterForm(request.POST)
-    #     allowed_register_emails = os.getenv("ALLOWED_REGISTER_EMAILS", "").split(",")
-    #     if form.is_valid():
-    #         # TODO : main branch -> Remove checking
-    #         if form.cleaned_data.get("email") in allowed_register_emails:
-    #             # Register and wait for activation
-    #             user: CustomUser = form.save(commit=False)
-    #             user.is_active = False
-    #             user.save()
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            # Register and wait for activation
+            user: CustomUser = form.save(commit=False)
+            user.is_active = False
+            user.save()
 
-    #             # Build email body
-    #             context = {
-    #                 "protocol": request.scheme,
-    #                 "host": request.get_host(),
-    #                 "uidb64": urlsafe_base64_encode(force_bytes(user.id)),
-    #                 "token": activation_token_generator.make_token(user),
-    #             }
-    #             email_body = render_to_string(
-    #                 "app_users/activate_email.html", context=context
-    #             )
+            # Build email body
+            context = {
+                "protocol": request.scheme,
+                "host": request.get_host(),
+                "uidb64": urlsafe_base64_encode(force_bytes(user.id)),
+                "token": activation_token_generator.make_token(user),
+            }
+            email_body = render_to_string(
+                "app_users/activate_email.html", context=context
+            )
 
-    #             # Send email
-    #             email = EmailMessage(
-    #                 to=[user.email],
-    #                 subject="Activate account หน่อยครับ",
-    #                 body=email_body,
-    #             )
-    #             email.send()
+            # Send email
+            email = EmailMessage(
+                to=[user.email],
+                subject="Activate account หน่อยครับ",
+                body=email_body,
+            )
+            email.send()
 
-    #             # Change redirect to register thank you
-    #             return HttpResponseRedirect(reverse("register_thankyou"))
-    # else:
-    #     form = RegisterForm()
+            # Change redirect to register thank you
+            return HttpResponseRedirect(reverse("register_thankyou"))
+    else:
+        form = RegisterForm()
 
-    # # GET
-    # context = {"form": form}
-    # return render(request, "app_users/register.html", context)
-
-    return render(request, "app_users/register_prevent.html")
+    # GET
+    context = {"form": form}
+    return render(request, "app_users/register.html", context)
 
 
 def register_thankyou(request: HttpRequest):

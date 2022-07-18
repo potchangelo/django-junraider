@@ -15,7 +15,6 @@
 </head>
 
 <body class="{{ request.COOKIES.theme }}">
-  {% include 'app_general/components/site_purpose.html' %}
   {% include 'app_general/components/site_header.html' %}
   {% block content %}{% endblock %}
   {% include 'app_general/components/site_footer.html' %}
