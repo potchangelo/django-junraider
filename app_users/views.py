@@ -16,8 +16,7 @@ from app_users.utils.activation_token_generator import activation_token_generato
 # Create your views here.
 
 
-# TODO : Compress all_images again
-# TODO : Prevent register on real web (will comment these code)
+# TODO : Comment and change code & template on preview branch
 def register(request: HttpRequest):
     # POST
     if request.method == "POST":
