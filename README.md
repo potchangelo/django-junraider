@@ -97,7 +97,7 @@ python manage.py runserver
 13. [Favorite food 2](https://github.com/potchangelo/django-junraider/tree/28-favorite-food-2)
 14. [404, 403, 500](https://github.com/potchangelo/django-junraider/tree/29-404-403-500)
 15. [Deploy to Heroku again](https://github.com/potchangelo/django-junraider/tree/30-deploy-heroku-2)
-16. Season 2 final code coming soon
+16. [Season 2 final code](https://github.com/potchangelo/django-junraider/tree/season-2)
 
 ### On preview web
 
