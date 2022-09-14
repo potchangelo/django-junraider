@@ -6,12 +6,16 @@ https://django-junraider.herokuapp.com/
 
 Note: ทำขึ้นมาเพื่อการศึกษาทางการเขียนโปรแกรมเท่านั้น เนื้อหาบนเว็บไม่ใช่สินค้าหรือบริการที่มีอยู่จริง
 
+(Update 4/8/2022) ถ้าใครรัน migrate แล้วเกิด Error ประมาณว่า ValueError naive datetime ... ให้ดูวิธีแก้ปัญหาที่โพสต์นี้ครับ
+
+https://www.facebook.com/zinglecode/posts/pfbid02AvL5kXanLA8wCMQFBtMXTfres1NSD9nsqSavEhr9W3QQy1C9hzhDLZAypR8Atadl
+
 
 ## YouTube video
 
 Season 1 : https://www.youtube.com/watch?v=BBL8W-lpNHw
 
-Season 2 : อยู่ระหว่างการถ่ายทำ
+Season 2 : https://www.youtube.com/watch?v=tTi2QxB1HJ8
 
 
 ## Install and Run project by VSCode
