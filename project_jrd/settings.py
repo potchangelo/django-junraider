@@ -85,7 +85,7 @@ WSGI_APPLICATION = "project_jrd.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "mysql.connector.django",
+        "ENGINE": os.getenv("DB_ENGINE", ""),
         "NAME": os.getenv("DB_NAME", ""),
         "USER": os.getenv("DB_USER", ""),
         "PASSWORD": os.getenv("DB_PASS", ""),
