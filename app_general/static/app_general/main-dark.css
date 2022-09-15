@@ -23,7 +23,8 @@ body.dark .site-header {
   border-bottom-color: #111111;
 }
 
-body.dark .site-header-item {
+body.dark .site-header-item a,
+body.dark .site-header-item button {
   color: white;
 }
 
