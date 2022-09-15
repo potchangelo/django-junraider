@@ -1,20 +1,26 @@
 {% load static %}
 <header class="site-header">
-  <a class="site-header-item site-header-brand" href="{% url 'home' %}">
-    {% if request.COOKIES.theme == "dark" %}
-      <img src="{% static 'app_general/logo-dark.png' %}">
-    {% else %}
-      <img src="{% static 'app_general/logo.png' %}">
-    {% endif %}
-    <span>จันทร์ไรเดอร์</span>
-  </a>
+  <div class="site-header-item">
+    <a class="site-header-brand" href="{% url 'home' %}">
+      {% if request.COOKIES.theme == "dark" %}
+        <img src="{% static 'app_general/logo-dark.png' %}">
+      {% else %}
+        <img src="{% static 'app_general/logo.png' %}">
+      {% endif %}
+      <span>จันทร์ไรเดอร์</span>
+    </a>
+  </div>
   <div class="site-header-menu">
-    <a class="site-header-item" href="{% url 'foods' %}">
-      <span>เมนูทั้งหมด</span>
-    </a>
-    <a class="site-header-item" href="{% url 'about' %}">
-      <span>เกี่ยวกับ</span>
-    </a>
+    <div class="site-header-item">
+      <a href="{% url 'foods' %}">
+        <span>เมนูทั้งหมด</span>
+      </a>
+    </div>
+    <div class="site-header-item">
+      <a href="{% url 'about' %}">
+        <span>เกี่ยวกับ</span>
+      </a>
+    </div>
     {% if user.is_authenticated %}
       <div class="site-header-item">
         <a href="{% url 'dashboard' %}">
@@ -23,21 +29,28 @@
       </div>
       <div class="site-header-item">
         <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
           <button type="submit">
             <span>ออกจากระบบ</span>
           </button>
         </form>
       </div>
     {% else %}
-      <a class="site-header-item" href="{% url 'login' %}">
-        <span>เข้าสู่ระบบ</span>
-      </a>
-      <a class="site-header-item" href="{% url 'register' %}">
-        <span>สมัครสมาชิก</span>
-      </a>
+      <div class="site-header-item">
+        <a href="{% url 'login' %}">
+          <span>เข้าสู่ระบบ</span>
+        </a>
+      </div>
+      <div class="site-header-item">
+        <a href="{% url 'register' %}">
+          <span>สมัครสมาชิก</span>
+        </a>
+      </div>
     {% endif %}
   </div>
-  <a class="site-header-item site-header-toggle-menu-button">
-    <span>MENU</span>
-  </a>
+  <div class="site-header-item">
+    <a class="site-header-toggle-menu-button">
+      <span>MENU</span>
+    </a>
+  </div>
 </header>
