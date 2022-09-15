@@ -9,6 +9,7 @@ mysql-connector-python = "<=8.0.29"
 python-dotenv = "*"
 gunicorn = "*"
 whitenoise = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 bpython = "*"
