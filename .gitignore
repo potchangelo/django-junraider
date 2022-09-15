@@ -114,7 +114,7 @@ dmypy.json
 .pyre/
 
 # Django test email folder
-test_inbox/
+/test_inbox
 
 # Django production static folder
-/static/
+/static
