@@ -147,6 +147,13 @@ a {
 }
 
 .site-header-item {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+
+.site-header-item a,
+.site-header-item button {
   color: #111111;
   background-color: rgba(0, 0, 0, 0);
   font-weight: 400;
@@ -156,9 +163,11 @@ a {
   padding: 10px;
   align-items: center;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
-.site-header-item:hover {
+.site-header-item a:hover,
+.site-header-item button:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
