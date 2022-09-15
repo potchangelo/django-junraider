@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
-mysql-connector-python = "*"
+mysql-connector-python = "<=8.0.29"
 python-dotenv = "*"
 gunicorn = "*"
 whitenoise = "*"
