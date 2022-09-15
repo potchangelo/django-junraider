@@ -1,0 +1,10 @@
+-i https://pypi.org/simple
+asgiref==3.5.2; python_version >= '3.7'
+django==4.1.1
+gunicorn==20.1.0
+mysql-connector-python==8.0.29
+protobuf==4.21.6; python_version >= '3.7'
+python-dotenv==0.21.0
+setuptools==65.3.0; python_version >= '3.7'
+sqlparse==0.4.2; python_version >= '3.5'
+whitenoise==6.2.0
