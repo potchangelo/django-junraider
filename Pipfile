@@ -10,6 +10,7 @@ python-dotenv = "*"
 gunicorn = "*"
 whitenoise = "*"
 psycopg2-binary = "*"
+tzdata = "*"
 
 [dev-packages]
 bpython = "*"
