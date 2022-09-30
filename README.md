@@ -1,6 +1,6 @@
 # Django Junraider
 
-https://django-junraider.herokuapp.com/
+https://django-junraider.onrender.com
 
 ตัวอย่างโปรเจ็ค Django จากคลิป "สอน Django เบื้องต้น จนใช้ได้จริง" ของ Zinglecode
 
@@ -9,6 +9,8 @@ Note: ทำขึ้นมาเพื่อการศึกษาทาง�
 (Update 4/8/2022) ถ้าใครรัน migrate แล้วเกิด Error ประมาณว่า ValueError naive datetime ... ให้ดูวิธีแก้ปัญหาที่โพสต์นี้ครับ
 
 https://www.facebook.com/zinglecode/posts/pfbid02AvL5kXanLA8wCMQFBtMXTfres1NSD9nsqSavEhr9W3QQy1C9hzhDLZAypR8Atadl
+
+(Update 30/9/2022) ย้าย Hosting ของเว็บพรีวิว จาก Heroku ไปยัง Render เนื่องจาก Heroku ยกเลิก Free tier ครับ
 
 
 ## YouTube video
